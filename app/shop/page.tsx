@@ -7,10 +7,34 @@ import Link from "next/link";
 import { products } from "../../data/products";
 
 const decorItems = [
-  { id: "d1", name: "Macramé Wall Art", image: "/images/macrame1.jpg", price: 80 },
-  { id: "d2", name: "Macramé Hanging", image: "/images/macrame2.jpg", price: 65 },
-  { id: "d3", name: "Handmade Mirror", image: "/images/mirror.jpg", price: 120 },
-  { id: "d4", name: "Calm Handmade Room", image: "/images/room.jpg", price: 95 },
+  {
+    id: 101,
+    name: "Macramé Wall Art",
+    image: "/images/macrame1.jpg",
+    price: 80,
+    description: "Handwoven macramé wall decor crafted with care.",
+  },
+  {
+    id: 102,
+    name: "Macramé Hanging",
+    image: "/images/macrame2.jpg",
+    price: 65,
+    description: "Minimal handmade hanging decor piece.",
+  },
+  {
+    id: 103,
+    name: "Handmade Mirror",
+    image: "/images/mirror.jpg",
+    price: 120,
+    description: "Decorative handmade mirror with woven details.",
+  },
+  {
+    id: 104,
+    name: "Calm Handmade Room",
+    image: "/images/room.jpg",
+    price: 95,
+    description: "Handcrafted decor for calm natural spaces.",
+  },
 ];
 
 export default function ShopPage() {
@@ -33,7 +57,7 @@ export default function ShopPage() {
     }
 
     return filtered;
-  }, [search, sort]);
+  }, [search, sort, allItems]);
 
   return (
     <section className="space-y-16">
@@ -77,7 +101,7 @@ export default function ShopPage() {
         {filteredItems.map((item) => (
           <Link
             key={item.id}
-            href={typeof item.id === "string" ? "#" : `/product/${item.id}`}
+            href={`/product/${item.id}`}
             className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition"
           >
             <div className="relative aspect-[4/5] w-full">
@@ -92,7 +116,9 @@ export default function ShopPage() {
 
             <div className="p-5 space-y-1">
               <h3 className="font-medium text-lg">{item.name}</h3>
-              <p className="text-sm text-gray-600">${item.price}</p>
+              <p className="text-sm text-gray-600">
+                {item.price} EGP
+              </p>
             </div>
           </Link>
         ))}
