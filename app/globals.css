@@ -2,54 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================= Base ================= */
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    background-color: #FAFAFA;
-    color: #1F2937;
+  background: #f5f3ef;
+  color: #1F2937;
 }
 
-/* Buttons */
+/* Typography refinement */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+/* ================= Buttons ================= */
+
 .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-xl hover:opacity-90 transition;
+  @apply bg-black text-white px-8 py-4 rounded-full hover:scale-105 transition-all duration-300;
 }
 
-/* Section spacing */
-.section {
-    @apply mb-16;
-}
+/* ================= Layout Helpers ================= */
 
-
-.section-lg {
-    @apply mb-24;
+section {
+  position: relative;
 }
 
 /* ================= Animations ================= */
 
 @keyframes fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fade-up {
-    animation: fade-up 0.8s ease-out both;
+  animation: fade-up 0.8s ease-out both;
 }
 
-/* Delay helpers */
 .delay-1 {
-    animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 
 .delay-2 {
-    animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .delay-3 {
-    animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+/* ================= Image Hover ================= */
+
+img {
+  transition: transform 0.7s ease;
+}
+
+.group:hover img {
+  transform: scale(1.05);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

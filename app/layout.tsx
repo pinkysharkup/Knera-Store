@@ -1,4 +1,45 @@
 
+// import "./globals.css";
+// import type { Metadata } from "next";
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
+// import PageWrapper from "../components/PageWrapper";
+// import { CartProvider } from "../context/CartContext";
+
+// import { Playfair_Display, Inter } from "next/font/google";
+
+// const playfair = Playfair_Display({
+//   subsets: ["latin"],
+//   weight: ["400", "600", "700"],
+// });
+
+// const inter = Inter({ subsets: ["latin"] });
+
+// export const metadata: Metadata = {
+//   title: "Knera Store",
+//   description:
+//     "Premium handmade crochet bags and decor crafted with timeless design.",
+// };
+
+// export default function RootLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <html lang="en">
+//       <body className={`${inter.className} bg-[#f5f3ef] text-gray-900 antialiased`}>
+//         <CartProvider>
+//           <Navbar />
+//           <main className="pt-32">
+//             <PageWrapper>{children}</PageWrapper>
+//           </main>
+//           <Footer />
+//         </CartProvider>
+//       </body>
+//     </html>
+//   );
+// }
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
@@ -6,43 +47,19 @@ import Footer from "../components/Footer";
 import PageWrapper from "../components/PageWrapper";
 import { CartProvider } from "../context/CartContext";
 
+import { Playfair_Display, Inter } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://knera-store.vercel.app"),
-  title: {
-    default: "Knera Store",
-    template: "%s | Knera Store",
-  },
+  title: "Knera Store",
   description:
     "Premium handmade crochet bags and decor crafted with timeless design.",
-  keywords: [
-    "handmade bags",
-    "crochet bags",
-    "macrame decor",
-    "knera store",
-  ],
-  openGraph: {
-    title: "Knera Store",
-    description:
-      "Premium handmade crochet bags and decor crafted with timeless design.",
-    url: "/",
-    siteName: "Knera Store",
-    images: [
-      {
-        url: "/images/bag-1.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Knera Store",
-    description:
-      "Premium handmade crochet bags and decor crafted with timeless design.",
-    images: ["/images/bag-1.jpg"],
-  },
 };
 
 export default function RootLayout({
@@ -52,10 +69,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 text-gray-900">
+      <body
+        className={`${inter.className} bg-[#f5f3ef] text-gray-900 antialiased`}
+      >
         <CartProvider>
           <Navbar />
-          <main className="min-h-screen max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <main className="pt-32">
             <PageWrapper>{children}</PageWrapper>
           </main>
           <Footer />
