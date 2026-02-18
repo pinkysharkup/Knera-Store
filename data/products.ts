@@ -1,4 +1,3 @@
-
 export type Product = {
   id: number;
   name: string;
@@ -49,7 +48,7 @@ export const products: Product[] = [
     ],
   },
 
-  // ================= Decor Items =================
+  // Decor Items
 
   {
     id: 101,

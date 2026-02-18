@@ -1,117 +1,33 @@
 
 "use client";
 
-// import { useState } from "react";
-// import { products } from "../../../data/products";
-// import Image from "next/image";
-// import { useCart } from "../../../context/CartContext";
-// import { motion } from "framer-motion";
-
-// type Props = {
-//   params: { id: string };
-// };
-
-// export default function ProductPage({ params }: Props) {
-//   const { addToCart } = useCart();
-//   const product = products.find((p) => p.id === Number(params.id));
-//   const [active, setActive] = useState(0);
-
-//   if (!product) return null;
-
-//   return (
-//     <section className="max-w-7xl mx-auto py-24 space-y-32">
-
-//       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
-
-//         {/* Gallery */}
-//         <div className="space-y-6">
-
-//           <motion.div
-//             key={active}
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ duration: 0.6 }}
-//             className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl"
-//           >
-//             <Image
-//               src={product.images[active]}
-//               alt=""
-//               fill
-//               className="object-cover"
-//             />
-//           </motion.div>
-
-//           <div className="flex gap-4">
-//             {product.images.map((img, i) => (
-//               <button
-//                 key={i}
-//                 onClick={() => setActive(i)}
-//                 className={`relative w-20 aspect-square rounded-xl overflow-hidden ${
-//                   active === i ? "ring-2 ring-black" : ""
-//                 }`}
-//               >
-//                 <Image src={img} alt="" fill className="object-cover" />
-//               </button>
-//             ))}
-//           </div>
-
-//         </div>
-
-//         {/* Info */}
-//         <div className="lg:sticky lg:top-32 space-y-8">
-
-//           <h1 className="text-5xl font-semibold tracking-tight">
-//             {product.name}
-//           </h1>
-
-//           <p className="text-2xl">{product.price} EGP</p>
-
-//           <p className="text-gray-600 leading-relaxed text-lg">
-//             {product.description}
-//           </p>
-
-//           <button
-//             onClick={() =>
-//               addToCart({
-//                 id: product.id,
-//                 name: product.name,
-//                 image: product.image,
-//                 price: product.price,
-//               })
-//             }
-//             className="bg-black text-white px-10 py-4 rounded-full hover:scale-105 transition-all duration-300"
-//           >
-//             Add to Cart
-//           </button>
-
-//         </div>
-
-//       </div>
-
-//     </section>
-//   );
-// }
-"use client";
-
 import { useState } from "react";
-import { products } from "../../../data/products";
+import { products, Product } from "../../../data/products";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "../../../context/CartContext";
 import { Playfair_Display } from "next/font/google";
+import { use } from "react";   
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
 
-type Props = {
-  params: { id: string };
-};
+export default function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
 
-export default function ProductPage({ params }: Props) {
+  const { id } = use(params);   // ⭐ نفك الـ Promise هنا
+
   const { addToCart } = useCart();
-  const product = products.find((p) => p.id === Number(params.id));
+
+  const product: Product | undefined = products.find(
+    (p) => p.id === Number(id)
+  );
+
   const [activeImage, setActiveImage] = useState(0);
 
   if (!product) {
@@ -132,21 +48,19 @@ export default function ProductPage({ params }: Props) {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
 
-        {/* ================= IMAGE SIDE ================= */}
+        {/* IMAGE SIDE */}
         <div className="space-y-8">
 
-          {/* Main Image */}
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
             <Image
               src={product.images[activeImage]}
-              alt={product.name}
+              alt={`Detailed view of handmade product: ${product.name}`}
               fill
               priority
               className="object-cover"
             />
           </div>
 
-          {/* Thumbnails */}
           <div className="flex gap-4">
             {product.images.map((img, index) => (
               <button
@@ -160,7 +74,7 @@ export default function ProductPage({ params }: Props) {
               >
                 <Image
                   src={img}
-                  alt=""
+                  alt={`Additional view of handmade product: ${product.name}`}
                   fill
                   className="object-cover"
                 />
@@ -170,13 +84,11 @@ export default function ProductPage({ params }: Props) {
 
         </div>
 
-        {/* ================= CONTENT SIDE ================= */}
+        {/* CONTENT SIDE */}
         <div className="lg:sticky lg:top-40 flex flex-col justify-center space-y-10">
 
           <div>
-            <h1
-              className={`${playfair.className} text-5xl md:text-6xl font-semibold leading-[1.05]`}
-            >
+            <h1 className={`${playfair.className} text-5xl md:text-6xl font-semibold leading-[1.05]`}>
               {product.name}
             </h1>
 
