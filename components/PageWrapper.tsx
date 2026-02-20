@@ -1,28 +1,12 @@
 
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export default function PageWrapper({ children }: Props) {
-  const pathname = usePathname();
-
+export default function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      {children}
+    </motion.div>
   );
 }
-

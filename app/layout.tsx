@@ -1,24 +1,15 @@
-
 import "./globals.css";
-import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
+import TopBar from "../components/TopBar";
 import Footer from "../components/Footer";
-import PageWrapper from "../components/PageWrapper";
 import { CartProvider } from "../context/CartContext";
-
-import { Playfair_Display, Inter } from "next/font/google";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Knera Store",
-  description:
-    "Premium handmade crochet bags and decor crafted with timeless design.",
+  description: "Premium handmade crochet bags and decor crafted with timeless design.",
 };
 
 export default function RootLayout({
@@ -28,14 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} bg-[#f5f3ef] text-gray-900 antialiased`}
-      >
+      <body className={`${inter.className} bg-[#f5f3ef] overflow-x-hidden antialiased`}>
         <CartProvider>
+          {/* Top navigation elements */}
+          <TopBar />
           <Navbar />
-          <main className="pt-32">
-            <PageWrapper>{children}</PageWrapper>
+
+          <main>
+            {children}
           </main>
+
           <Footer />
         </CartProvider>
       </body>
