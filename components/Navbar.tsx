@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import { User } from "lucide-react";
 import { useEffect, useState } from "react";
-
+import CurrencyDropdown from "./CurrencyDropdown";
 export default function Navbar() {
   const { totalItems } = useCart();
 
@@ -35,9 +35,10 @@ export default function Navbar() {
 
       {/* ===== RIGHT SIDE (Absolute - Scrolls away) ===== */}
       <div className="absolute top-20 right-12 flex items-center gap-6 text-sm tracking-[0.25em] text-white z-[90]">
-        <div className="border border-white/70 px-2 py-[1px] text-[10px]">
+        {/* <div className="border border-white/70 px-2 py-[1px] text-[10px]">
           USD $
-        </div>
+        </div> */}
+        <CurrencyDropdown />
 
         <Link href="/login" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
           LOGIN <User size={14} strokeWidth={1.8} />
