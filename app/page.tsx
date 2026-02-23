@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
 import FeaturesSection from "../components/FeaturesSection";
+import HeroFashion from "../components/HeroFashion";
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -56,6 +58,7 @@ export default function Home() {
   {/* 👇 مهم — السلايدر بره الـ container */}
   <ProductsSlider />
   <FeaturesSection />
+  <HeroFashion />
 </>
   );
 }
