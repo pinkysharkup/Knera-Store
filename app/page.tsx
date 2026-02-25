@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
 import HeroFashion from "../components/HeroFashion";
 import CategoriesGrid from "../components/CategoriesGrid";
+import TestimonialSection from "../components/TestimonialSection";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -23,6 +24,7 @@ export default function Home() {
       <FeaturesSection />
       <HeroFashion />
       <CategoriesGrid />
+      <TestimonialSection />
     </div>
   );
 }
