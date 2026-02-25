@@ -36,8 +36,7 @@ export default function ProductsSlider() {
   };
 
   return (
-    <section className="relative py-32 bg-[#f5f3ef] overflow-hidden">
-
+    <section className="relative bg-[#f5f3ef] overflow-hidden">
       {/* HEADER */}
       <div className="px-20 mb-16 flex justify-between">
 

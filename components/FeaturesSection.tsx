@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -6,68 +5,57 @@ import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400","600","700"]
 });
 
 export default function FeaturesSection() {
+
+  const items = [
+    { title: "Biodegradable", icon: "/icons/icon1.png" },
+    { title: "Handmade Art", icon: "/icons/icon2.png" },
+    { title: "No mulesing", icon: "/icons/icon3.png" },
+    { title: "Softness", icon: "/icons/icon4.png" },
+  ];
+
   return (
-    <section className="py-36 bg-[#f5f3ef] text-center">
+    <section className="py-40 bg-[#f5f3ef] text-center">
 
-      {/* ===== TITLE ===== */}
-      <h2 className={`${playfair.className} text-[48px] md:text-[58px] leading-tight`}>
-        Best of Handmade Goods
-      </h2>
+      <div className="max-w-5xl mx-auto px-6">
 
-      {/* underline بتاع Formarta */}
-      <div className="w-[120px] h-[2px] bg-[#cfc9bf] mx-auto mt-6 mb-8 relative">
-        <div className="absolute left-1/2 -translate-x-1/2 top-[-2px] w-[160px] h-[2px] bg-[#cfc9bf] opacity-40"></div>
-      </div>
+        <h2 className={`${playfair.className} text-5xl`}>
+          Best of Handmade Goods
+        </h2>
 
-      {/* النص */}
-      <p className="max-w-3xl mx-auto text-[#6e6e6e] leading-relaxed text-[15px] px-6">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit.
-      </p>
+        <div className="w-28 h-[1px] bg-black/40 mx-auto mt-6 mb-8"/>
 
+        <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+        </p>
 
-      {/* ===== FEATURES ===== */}
-      <div className="mt-20 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14">
+        {/* FEATURES GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-16 mt-20">
 
-        {/* ITEM 1 */}
-        <div className="flex flex-col items-center">
-          <Image src="/icons/icon1.png" alt="Biodegradable" width={70} height={70} />
-          <h3 className="mt-6 text-lg font-medium">Biodegradable</h3>
-          <p className="mt-2 text-sm text-gray-500 max-w-[180px]">
-            Reerit in voluptate velit suis amet.
-          </p>
-        </div>
+          {items.map((item,i)=>(
+            <div key={i} className="flex flex-col items-center">
 
-        {/* ITEM 2 */}
-        <div className="flex flex-col items-center">
-          <Image src="/icons/icon2.png" alt="Handmade Art" width={70} height={70} />
-          <h3 className="mt-6 text-lg font-medium">Handmade Art</h3>
-          <p className="mt-2 text-sm text-gray-500 max-w-[180px]">
-            Reerit in voluptate velit suis amet.
-          </p>
-        </div>
+              <div className="relative w-16 h-16 mb-6">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
-        {/* ITEM 3 */}
-        <div className="flex flex-col items-center">
-          <Image src="/icons/icon3.png" alt="No mulesing" width={70} height={70} />
-          <h3 className="mt-6 text-lg font-medium">No mulesing</h3>
-          <p className="mt-2 text-sm text-gray-500 max-w-[180px]">
-            Reerit in voluptate velit suis amet.
-          </p>
-        </div>
+              <h4 className="text-lg">{item.title}</h4>
 
-        {/* ITEM 4 */}
-        <div className="flex flex-col items-center">
-          <Image src="/icons/icon4.png" alt="Softness" width={70} height={70} />
-          <h3 className="mt-6 text-lg font-medium">Softness</h3>
-          <p className="mt-2 text-sm text-gray-500 max-w-[180px]">
-            Reerit in voluptate velit suis amet.
-          </p>
+              <p className="text-gray-500 text-sm mt-2 max-w-[180px]">
+                Reerit in voluptate velit suis amet.
+              </p>
+
+            </div>
+          ))}
+
         </div>
 
       </div>
