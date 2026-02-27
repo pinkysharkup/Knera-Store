@@ -10,6 +10,7 @@ import { Playfair_Display } from "next/font/google";
 import HeroFashion from "../components/HeroFashion";
 import CategoriesGrid from "../components/CategoriesGrid";
 import TestimonialSection from "../components/TestimonialSection";
+import JournalSection from "../components/JournalSection";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -19,12 +20,14 @@ const playfair = Playfair_Display({
 export default function Home() {
   return (
     <div className="space-y-40">
+    {/* // <div className="space-y-28"> */}
       <HeroSection />
       <ProductsSlider />
       <FeaturesSection />
       <HeroFashion />
       <CategoriesGrid />
       <TestimonialSection />
+      <JournalSection />
     </div>
   );
 }
