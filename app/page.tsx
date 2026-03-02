@@ -12,6 +12,7 @@ import CategoriesGrid from "../components/CategoriesGrid";
 import TestimonialSection from "../components/TestimonialSection";
 import JournalSection from "../components/JournalSection";
 import HeroKnitwear from "../components/HeroKnitwear";
+import InstagramStory from "../components/InstagramStory";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -30,6 +31,7 @@ export default function Home() {
       <TestimonialSection />
       <JournalSection />
       <HeroKnitwear />
+      <InstagramStory />
     </div>
   );
 }
