@@ -8,11 +8,12 @@ html {
   scroll-behavior: smooth;
 }
 
+
 body {
   background: #f5f3ef;
   color: #1F2937;
+  overflow-x: hidden;
 }
-
 
 /* Typography refinement */
 h1,
@@ -100,4 +101,16 @@ img {
 
 .animate-scroll {
   animation: scroll 40s linear infinite;
+}
+/* ===== Mobile fixes ===== */
+
+@media (max-width: 640px) {
+  h1 {
+    line-height: 1.15;
+  }
+
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

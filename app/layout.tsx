@@ -1,8 +1,8 @@
 
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import TopBar from "../components/TopBar";
 import Footer from "../components/Footer";
+import TopBar from "../components/TopBar";
 import { CartProvider } from "../context/CartContext";
 import { Inter, Playfair_Display } from "next/font/google";
 
@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-playfair", // 👈 مهم
+  variable: "--font-playfair",
 });
 
 export const metadata = {
@@ -31,12 +31,16 @@ export default function RootLayout({
         className={`${inter.className} bg-[#f5f3ef] overflow-x-hidden antialiased`}
       >
         <CartProvider>
+
           <TopBar />
+
           <Navbar />
 
           <main>{children}</main>
+          
 
           <Footer />
+
         </CartProvider>
       </body>
     </html>

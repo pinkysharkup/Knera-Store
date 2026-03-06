@@ -11,38 +11,54 @@ const playfair = Playfair_Display({
 
 export default function CategoriesGrid() {
   return (
-    <section className="py-40">
+    <section className="py-20 md:py-32">
 
-      {/* container نفس عرض الموقع */}
-      <div className="max-w-[1440px] mx-auto px-8">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8">
 
-        {/* title */}
-        <div className="text-center mb-28">
-          <h2 className={`${playfair.className} text-[56px] leading-tight`}>
+        {/* Title */}
+        <div className="text-center mb-16 md:mb-24">
+
+          <h2
+            className={`${playfair.className}
+            text-3xl
+            md:text-5xl
+            lg:text-6xl
+            leading-tight`}
+          >
             Explore New Arrivals
           </h2>
-          <p className="text-gray-500 mt-5">
+
+          <p className="text-gray-500 mt-4">
             Lorem ipsum dolor sit amet, adipiscing elit
           </p>
+
         </div>
 
-        {/* grid الحقيقي */}
-        <div className="grid grid-cols-[433px_1fr] gap-7 justify-center">
+        {/* Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* LEFT BIG */}
-          <div className="relative rounded-xl overflow-hidden">
-            <div className="relative w-[480px] aspect-[480/700]">
-              <Image src="/images/shop-img-4.jpg" alt="" fill className="object-cover"/>
+          {/* Big card */}
+          <div className="lg:col-span-1 relative rounded-xl overflow-hidden">
+
+            <div className="relative w-full h-[420px] md:h-[520px]">
+              <Image
+                src="/images/shop-img-4.jpg"
+                alt=""
+                fill
+                className="object-cover"
+              />
             </div>
+
             <Overlay
               big
               title="Best Source of Handmade Sweaters"
               tags={["Water Repellent","Outwear"]}
             />
+
           </div>
 
-          {/* RIGHT */}
-          <div className="grid grid-cols-2 gap-7">
+          {/* Small cards */}
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
 
             <Card img="/images/shop-img-7.jpg" title="Accessories" tags={["Cotton","Handmade"]}/>
             <Card img="/images/shop-img-8.jpg" title="Hats & Scarfs" tags={["Repellent","Alpaca"]}/>
@@ -54,6 +70,7 @@ export default function CategoriesGrid() {
         </div>
 
       </div>
+
     </section>
   );
 }
@@ -61,24 +78,42 @@ export default function CategoriesGrid() {
 function Card({ img, title, tags }: any) {
   return (
     <div className="relative rounded-xl overflow-hidden">
-      <div className="relative w-full aspect-[1/1] min-h-[340px]">
-        <Image src={img} alt="" fill className="object-cover"/>
+
+      <div className="relative w-full h-[260px] md:h-[320px]">
+        <Image
+          src={img}
+          alt=""
+          fill
+          className="object-cover"
+        />
       </div>
+
       <Overlay title={title} tags={tags}/>
+
     </div>
   );
 }
 
 function Overlay({ title, tags, big }: any) {
   return (
-    <div className="absolute inset-0 flex flex-col justify-end p-6 text-white
-                    bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+    <div
+      className="
+      absolute inset-0
+      flex flex-col justify-end
+      p-5
+      text-white
+      bg-gradient-to-t
+      from-black/70
+      via-black/20
+      to-transparent
+      "
+    >
 
-      <h3 className={big ? "text-[26px] leading-snug" : "text-[18px]"}>
+      <h3 className={big ? "text-xl md:text-2xl leading-snug" : "text-base md:text-lg"}>
         {title}
       </h3>
 
-      <div className="flex gap-5 text-sm mt-3 opacity-90">
+      <div className="flex gap-4 text-sm mt-2 opacity-90 flex-wrap">
         {tags.map((t:string,i:number)=>(<span key={i}>{t}</span>))}
       </div>
 
