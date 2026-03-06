@@ -7,26 +7,24 @@ import { Playfair_Display } from "next/font/google";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400"],
-  style: ["italic"]
+  style: ["italic"],
 });
 
 export default function TestimonialSection() {
   return (
-    <section className="bg-white py-40">
+    <section className="bg-white py-20 md:py-40">
 
       <div className="max-w-[1100px] mx-auto px-6">
 
-        <div className="grid grid-cols-[420px_1fr_120px] items-center">
+        <div className="grid md:grid-cols-[420px_1fr_120px] gap-10 items-center">
 
           {/* ===== LEFT ICON AREA ===== */}
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center order-1">
 
-            {/* beige shape */}
-            <div className="w-[260px] h-[190px] bg-[#e7e1d7] rounded-[55%_45%_60%_40%]"></div>
+            <div className="w-[200px] md:w-[260px] h-[150px] md:h-[190px] bg-[#e7e1d7] rounded-[55%_45%_60%_40%]"></div>
 
-            {/* quote فوق الشكل مباشرة */}
             <svg
-              className="absolute top-[-18px] left-1/2 -translate-x-1/2 w-[54px] text-[#4a4a4a]"
+              className="absolute top-[-18px] left-1/2 -translate-x-1/2 w-[40px] md:w-[54px] text-[#4a4a4a]"
               viewBox="0 0 52.798 47.992"
               fill="none"
               stroke="currentColor"
@@ -40,16 +38,18 @@ export default function TestimonialSection() {
 
 
           {/* ===== TEXT AREA ===== */}
-          <div className="max-w-[560px]">
+          <div className="max-w-[560px] text-center md:text-left order-2">
 
-            <p className={`${playfair.className} italic text-[23px] leading-[1.9] text-[#2b2b2b]`}>
+            <p
+              className={`${playfair.className} italic text-lg md:text-[23px] leading-[1.9] text-[#2b2b2b]`}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Congue eu consequat ac felis donec.
             </p>
 
             {/* AUTHOR */}
-            <div className="flex items-center gap-4 mt-12">
+            <div className="flex items-center justify-center md:justify-start gap-4 mt-8 md:mt-12">
 
               <Image
                 src="/images/testimonials-img-3.png"
@@ -72,7 +72,7 @@ export default function TestimonialSection() {
 
 
           {/* ===== ARROWS ===== */}
-          <div className="flex flex-col items-center gap-6 text-gray-500">
+          <div className="flex md:flex-col justify-center items-center gap-6 text-gray-500 order-3">
 
             <button className="text-2xl hover:text-black transition">←</button>
             <button className="text-2xl hover:text-black transition">→</button>
