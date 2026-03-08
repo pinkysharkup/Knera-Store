@@ -114,3 +114,6 @@ img {
     padding-right: 1rem;
   }
 }
+body:has(.about-page) .vertical-menu {
+  display: none;
+}
