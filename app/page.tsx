@@ -11,6 +11,7 @@ import JournalSection from "../components/JournalSection";
 import HeroKnitwear from "../components/HeroKnitwear";
 import InstagramStory from "../components/InstagramStory";
 
+
 export default function Home() {
   return (
     <main className="w-full overflow-x-hidden">
@@ -34,6 +35,8 @@ export default function Home() {
         <HeroKnitwear />
 
         <InstagramStory />
+
+       
 
       </div>
 

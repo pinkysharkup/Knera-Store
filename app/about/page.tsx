@@ -3,16 +3,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import StatsSection from "../../components/StatsSection";
 
 export default function AboutPage() {
 
-
-return(<div className="w-full pt-[160px] md:pt-[90px]">
+return(
+<div className="w-full pt-[160px] md:pt-[90px]">
 
   {/* NAVBAR */}
 
-   
-   <div className="hidden md:flex w-full bg-[#f5f3ef] h-[90px] items-center justify-between px-[20px] md:px-[120px]">
+  <div className="hidden md:flex w-full bg-[#f5f3ef] h-[90px] items-center justify-between px-[20px] md:px-[120px]">
 
     <div className="w-[60px] h-[60px] border border-[#2b2b2b] rounded-full flex items-center justify-center text-[18px] tracking-[0.2em]">
       F:t
@@ -37,7 +37,7 @@ return(<div className="w-full pt-[160px] md:pt-[90px]">
       </div>
     </div>
 
-  </div> 
+  </div>
 
 
   {/* HERO */}
@@ -62,12 +62,7 @@ return(<div className="w-full pt-[160px] md:pt-[90px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </p>
 
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="120"
-        height="4"
-        viewBox="0 0 67.85 4.324"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="120" height="4" viewBox="0 0 67.85 4.324">
         <path
           d="M438.6,4846.108s24.544.81,27.829,0,.966,1.133,5.218,0,10.049-2.105,16.041,0,18.746,2.105,18.746,2.105"
           transform="translate(-438.584 -4844.39)"
@@ -88,11 +83,9 @@ return(<div className="w-full pt-[160px] md:pt-[90px]">
 
     <div className="max-w-[1320px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-[60px] md:gap-[120px] items-center px-[20px] md:px-0">
 
-
       {/* IMAGE */}
 
       <div>
-
         <Image
           src="/images/p2-img-1.jpg"
           alt="Anne"
@@ -100,7 +93,6 @@ return(<div className="w-full pt-[160px] md:pt-[90px]">
           height={750}
           className="w-full object-cover"
         />
-
       </div>
 
 
@@ -138,8 +130,6 @@ return(<div className="w-full pt-[160px] md:pt-[90px]">
         </p>
 
 
-        {/* ICONS */}
-
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-8">
 
           <div className="flex items-center gap-3">
@@ -158,19 +148,16 @@ return(<div className="w-full pt-[160px] md:pt-[90px]">
 
         </div>
 
-
-        {/* SIGNATURE */}
-
-        <img
-          src="/images/p2-signature-img-ver-2.png"
-          className="w-[160px]"
-        />
+        <img src="/images/p2-signature-img-ver-2.png" className="w-[160px]" />
 
       </div>
 
     </div>
 
   </section>
+
+  <StatsSection />
+
 
 </div>
 
