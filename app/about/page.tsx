@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import StatsSection from "../../components/StatsSection";
+import AboutAccordion from "../../components/AboutAccordion";
 
 export default function AboutPage() {
 
@@ -158,6 +159,7 @@ return(
 
   <StatsSection />
 
+  <AboutAccordion />
 
 </div>
 
