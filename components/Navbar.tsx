@@ -27,22 +27,47 @@ return (
 
 {/* MOBILE HEADER */}
 
-<div className="fixed top-[60px] left-0 w-full flex items-center px-4 py-3 text-white z-[100] md:hidden relative">
+<div className="fixed top-[40px] left-0 right-0 w-full h-[70px] flex items-center justify-between px-4 bg-[#f5f3ef] text-[#2b2b2b] z-[100] md:hidden">
+
+{/* MENU ICON */}
 
 <button onClick={() => setMobileOpen(true)}>
-<Menu size={24}/>
+<Menu size={26}/>
 </button>
+
+
+{/* LOGO */}
 
 <Link
 href="/"
-className="absolute left-1/2 -translate-x-1/2 w-9 h-9 border border-white rounded-full flex items-center justify-center tracking-[0.2em]"
+className="w-10 h-10 border border-[#2b2b2b] rounded-full flex items-center justify-center tracking-[0.2em]"
 >
-Kn
+F:t
+</Link>
+
+
+{/* CART */}
+
+<Link href="/cart" className="flex items-center gap-2 text-[13px] tracking-[0.25em] relative">
+
+CART
+
+{totalItems > 0 && (
+
+<span className="absolute -top-2 -right-3 bg-black text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
+
+{totalItems}
+
+</span>
+
+)}
+
 </Link>
 
 </div>
 
-{/* DESKTOP NAVBAR يظهر فقط في الصفحة الرئيسية */}
+
+{/* DESKTOP NAVBAR */}
 
 {pathname === "/" && (
 
@@ -61,6 +86,7 @@ className="flex items-center gap-2 hover:opacity-70"
 
 HOME
 {homeOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
 </button>
 
 {homeOpen && (
@@ -75,9 +101,11 @@ HOME
 <Link href="/">Carpentry Home</Link>
 
 </div>
+
 )}
 
 </div>
+
 
 {/* PAGES */}
 
@@ -90,6 +118,7 @@ className="flex items-center gap-2 hover:opacity-70"
 
 PAGES
 {pagesOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
 </button>
 
 {pagesOpen && (
@@ -102,9 +131,11 @@ PAGES
 <Link href="/contact">Contact Us</Link>
 
 </div>
+
 )}
 
 </div>
+
 
 {/* SHOP */}
 
@@ -117,6 +148,7 @@ className="flex items-center gap-2 hover:opacity-70"
 
 SHOP
 {shopOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
 </button>
 
 {shopOpen && (
@@ -127,9 +159,11 @@ SHOP
 <Link href="/product">Product Single</Link>
 
 </div>
+
 )}
 
 </div>
+
 
 {/* BLOG */}
 
@@ -142,6 +176,7 @@ className="flex items-center gap-2 hover:opacity-70"
 
 BLOG
 {blogOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
 </button>
 
 {blogOpen && (
@@ -152,6 +187,7 @@ BLOG
 <Link href="/blog/masonry">Blog Masonry</Link>
 
 </div>
+
 )}
 
 </div>
@@ -162,12 +198,14 @@ LANDING
 
 </div>
 
+
 <Link
 href="/"
 className="w-12 h-12 border border-white rounded-full flex items-center justify-center tracking-[0.25em]"
 >
 Kn
 </Link>
+
 
 <div className="flex items-center gap-6 text-sm tracking-[0.25em]">
 
@@ -204,6 +242,7 @@ CART
 
 )}
 
+
 {/* MOBILE MENU */}
 
 {mobileOpen && (
@@ -215,14 +254,126 @@ className="fixed inset-0 bg-black/60 z-[150]"
 onClick={() => setMobileOpen(false)}
 />
 
-<div className="fixed top-0 left-0 h-full w-[300px] bg-white text-black z-[200] overflow-y-auto">
+<div className="fixed top-0 left-0 h-full w-[320px] bg-white text-[#2b2b2b] z-[200] overflow-y-auto">
 
-<div className="px-6 pt-20 pb-10 space-y-6">
+<div className="px-8 pt-24 pb-12 space-y-6 text-[14px] tracking-[0.25em]">
 
-<Link href="/">HOME</Link>
-<Link href="/about">ABOUT</Link>
-<Link href="/shop">SHOP</Link>
-<Link href="/blog">BLOG</Link>
+
+<div>
+
+<button
+onClick={() => setHomeOpen(!homeOpen)}
+className="w-full flex items-center justify-between"
+>
+
+HOME
+{homeOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
+</button>
+
+{homeOpen && (
+
+<div className="flex flex-col gap-4 mt-5 ml-3 text-[13px] text-[#6a6a6a]">
+
+<Link href="/">Knitwear Home</Link>
+<Link href="/">Leather Home</Link>
+<Link href="/">Ceramics Home</Link>
+<Link href="/">Soapmaking Home</Link>
+<Link href="/">Bakery Home</Link>
+<Link href="/">Carpentry Home</Link>
+
+</div>
+
+)}
+
+</div>
+
+
+<div>
+
+<button
+onClick={() => setPagesOpen(!pagesOpen)}
+className="w-full flex items-center justify-between"
+>
+
+PAGES
+{pagesOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
+</button>
+
+{pagesOpen && (
+
+<div className="flex flex-col gap-4 mt-5 ml-3 text-[13px] text-[#6a6a6a]">
+
+<Link href="/about">About Me</Link>
+<Link href="/team">Our Team</Link>
+<Link href="/services">What We Do</Link>
+<Link href="/contact">Contact Us</Link>
+
+</div>
+
+)}
+
+</div>
+
+
+<div>
+
+<button
+onClick={() => setShopOpen(!shopOpen)}
+className="w-full flex items-center justify-between"
+>
+
+SHOP
+{shopOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
+</button>
+
+{shopOpen && (
+
+<div className="flex flex-col gap-4 mt-5 ml-3 text-[13px] text-[#6a6a6a]">
+
+<Link href="/shop">Shop Lists</Link>
+<Link href="/shop">Shop Layouts</Link>
+<Link href="/shop">Shop Pages</Link>
+<Link href="/product">Product Types</Link>
+
+</div>
+
+)}
+
+</div>
+
+
+<div>
+
+<button
+onClick={() => setBlogOpen(!blogOpen)}
+className="w-full flex items-center justify-between"
+>
+
+BLOG
+{blogOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+
+</button>
+
+{blogOpen && (
+
+<div className="flex flex-col gap-4 mt-5 ml-3 text-[13px] text-[#6a6a6a]">
+
+<Link href="/blog/sidebar">Right Sidebar</Link>
+<Link href="/blog/masonry">Blog Masonry</Link>
+
+</div>
+
+)}
+
+</div>
+
+
+<Link href="/" className="block pt-2">
+LANDING
+</Link>
 
 </div>
 

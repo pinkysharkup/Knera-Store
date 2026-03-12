@@ -5,18 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutPage() {
-return ( <div className="w-full pt-[90px]">
 
-```
+
+return(<div className="w-full pt-[160px] md:pt-[90px]">
+
   {/* NAVBAR */}
 
-  <div className="w-full bg-[#f5f3ef] h-[90px] flex items-center justify-between px-[120px]">
+   
+   <div className="hidden md:flex w-full bg-[#f5f3ef] h-[90px] items-center justify-between px-[20px] md:px-[120px]">
 
     <div className="w-[60px] h-[60px] border border-[#2b2b2b] rounded-full flex items-center justify-center text-[18px] tracking-[0.2em]">
       F:t
     </div>
 
-    <div className="flex gap-10 text-[13px] tracking-[0.35em]">
+    <div className="hidden md:flex gap-10 text-[13px] tracking-[0.35em]">
       <Link href="/">HOME</Link>
       <Link href="/">PAGES</Link>
       <Link href="/">SHOP</Link>
@@ -25,7 +27,7 @@ return ( <div className="w-full pt-[90px]">
     </div>
 
     <div className="flex items-center gap-6 text-[13px] tracking-[0.25em]">
-      <span>LOGIN</span>
+      <span className="hidden md:block">LOGIN</span>
 
       <div className="flex items-center gap-2">
         CART
@@ -35,7 +37,8 @@ return ( <div className="w-full pt-[90px]">
       </div>
     </div>
 
-  </div>
+  </div> 
+
 
   {/* HERO */}
 
@@ -49,13 +52,13 @@ return ( <div className="w-full pt-[90px]">
       priority
     />
 
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 md:px-0">
 
-      <h1 className="text-[64px] font-serif mb-4">
+      <h1 className="text-[40px] md:text-[64px] font-serif mb-3 md:mb-4">
         About Me
       </h1>
 
-      <p className="text-[14px] tracking-wide mb-6">
+      <p className="text-[13px] md:text-[14px] tracking-wide mb-4 md:mb-6 max-w-[320px] md:max-w-none">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </p>
 
@@ -81,14 +84,15 @@ return ( <div className="w-full pt-[90px]">
 
   {/* STORY SECTION */}
 
-  <section className="w-full bg-[#f5f3ef] py-[140px]">
+  <section className="w-full bg-[#f5f3ef] py-[80px] md:py-[140px]">
 
-    <div className="max-w-[1320px] mx-auto grid grid-cols-2 gap-[120px] items-center">
+    <div className="max-w-[1320px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-[60px] md:gap-[120px] items-center px-[20px] md:px-0">
 
 
       {/* IMAGE */}
 
       <div>
+
         <Image
           src="/images/p2-img-1.jpg"
           alt="Anne"
@@ -96,6 +100,7 @@ return ( <div className="w-full pt-[90px]">
           height={750}
           className="w-full object-cover"
         />
+
       </div>
 
 
@@ -103,7 +108,7 @@ return ( <div className="w-full pt-[90px]">
 
       <div className="flex flex-col items-center text-center">
 
-        <h2 className="text-[42px] font-serif text-[#2b2b2b] mb-4">
+        <h2 className="text-[32px] md:text-[42px] font-serif text-[#2b2b2b] mb-4">
           Story of Anne Smith
         </h2>
 
@@ -123,21 +128,19 @@ return ( <div className="w-full pt-[90px]">
           />
         </svg>
 
-        <p className="text-[15px] text-[#6a6a6a] leading-[28px] mb-6 max-w-[480px]">
+        <p className="text-[14px] md:text-[15px] text-[#6a6a6a] leading-[26px] md:leading-[28px] mb-6 max-w-[480px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor et dolore. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut commodo consequat.
+          eiusmod tempor et dolore.
         </p>
 
-        <p className="text-[15px] text-[#6a6a6a] leading-[28px] mb-10 max-w-[480px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor et dolore. Ut enim ad minim veniam.
+        <p className="text-[14px] md:text-[15px] text-[#6a6a6a] leading-[26px] md:leading-[28px] mb-10 max-w-[480px]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
 
 
         {/* ICONS */}
 
-        <div className="flex items-center gap-12 mb-8">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-8">
 
           <div className="flex items-center gap-3">
             <img src="/icons/p2-icon-1-x2.png" className="w-[34px]" />
