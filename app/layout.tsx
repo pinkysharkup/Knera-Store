@@ -1,4 +1,5 @@
 
+
 import "./globals.css";
 import Footer from "../components/Footer";
 import { CartProvider } from "../context/CartContext";
@@ -29,9 +30,8 @@ export default function RootLayout({
         className={`${inter.className} ${playfair.variable} bg-[#f5f3ef] overflow-x-hidden antialiased`}
       >
         <CartProvider>
+      
 
-          {/* ❌ شيلنا Navbar و TopBar من هنا */}
-          
           <main>{children}</main>
 
           <Footer />
