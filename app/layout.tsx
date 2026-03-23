@@ -1,8 +1,6 @@
 
 import "./globals.css";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import TopBar from "../components/TopBar";
 import { CartProvider } from "../context/CartContext";
 import { Inter, Playfair_Display } from "next/font/google";
 
@@ -28,16 +26,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={playfair.variable}>
       <body
-        className={`${inter.className} bg-[#f5f3ef] overflow-x-hidden antialiased`}
+        className={`${inter.className} ${playfair.variable} bg-[#f5f3ef] overflow-x-hidden antialiased`}
       >
         <CartProvider>
 
-          <TopBar />
-
-          <Navbar />
-
-          <main>{children}</main>
+          {/* ❌ شيلنا Navbar و TopBar من هنا */}
           
+          <main>{children}</main>
 
           <Footer />
 
