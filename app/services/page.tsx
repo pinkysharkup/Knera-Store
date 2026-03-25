@@ -1,4 +1,6 @@
+
 import Navbar from "../../components/Navbar";
+import MobileNavbar from "../../components/MobileNavbar";
 import WhatWeDoHero from "../../components/WhatWeDoHero";
 import WhatWeMade from "../../components/WhatWeMade";
 import IdeaToProduct from "../../components/IdeaToProduct";
@@ -9,8 +11,15 @@ export default function ServicesPage() {
   return (
     <div className="w-full">
 
-      {/* 🔥 NAVBAR */}
-      <Navbar />
+      {/* Desktop Navbar */}
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
+
+      {/* Mobile Navbar */}
+      <div className="block md:hidden">
+        <MobileNavbar />
+      </div>
 
       {/* 🔥 HERO */}
       <WhatWeDoHero />

@@ -15,7 +15,8 @@ export default function MobileNavbar() {
   return (
     <>
       {/* HEADER */}
-      <div className="md:hidden fixed top-0 left-0 w-full z-[500]">
+      
+      <div className="md:hidden relative w-full z-[500]">
 
         {/* Top Bar */}
         <div className="bg-[#cbb8ae] text-white text-center text-[12px] py-2 tracking-[0.2em]">
@@ -54,7 +55,7 @@ export default function MobileNavbar() {
 
         </div>
       </div>
-
+      <div className="h-[110px] md:hidden"></div>
       {/* MENU */}
       {mobileOpen && (
         <>
