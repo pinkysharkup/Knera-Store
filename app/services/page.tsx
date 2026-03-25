@@ -2,6 +2,8 @@ import Navbar from "../../components/Navbar";
 import WhatWeDoHero from "../../components/WhatWeDoHero";
 import WhatWeMade from "../../components/WhatWeMade";
 import IdeaToProduct from "../../components/IdeaToProduct";
+import AboutCEO from "../../components/AboutCEO";
+import FormartaOffers from "../../components/FormartaOffers";
 
 export default function ServicesPage() {
   return (
@@ -18,6 +20,12 @@ export default function ServicesPage() {
 
       {/* 🔥 IDEA TO PRODUCT */}
       <IdeaToProduct />
+
+      {/* 🔥 ABOUT CEO */}
+      <AboutCEO />
+
+      {/* 🔥 FORMARTA OFFERS */}
+      <FormartaOffers />
 
     </div>
   );
