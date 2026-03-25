@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import MobileNavbar from "../../components/MobileNavbar";
 import ContactHero from "../../components/ContactHero";
 import ContactInfo from "../../components/ContactInfo";
+import ContactMap from "../../components/ContactMap";
 export default function ContactPage() {
   return (
     <div className="w-full">
@@ -16,7 +17,7 @@ export default function ContactPage() {
 
       <ContactHero />
       <ContactInfo />
-
+      <ContactMap />
     </div>
   );
 }
