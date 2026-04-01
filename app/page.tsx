@@ -17,12 +17,17 @@ import InstagramStory from "../components/InstagramStory";
 
 import NavbarHome from "../components/NavbarHome";
 import CurrencyDropdown from "../components/CurrencyDropdown";
+import LoginModal from "../components/LoginModal";
+
 import { useCart } from "../context/CartContext";
 
 export default function Home() {
   const { totalItems } = useCart();
 
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // LOGIN MODAL
+  const [openLogin, setOpenLogin] = useState(false);
 
   return (
     <main className="w-full overflow-x-hidden relative">
@@ -52,6 +57,7 @@ export default function Home() {
         </div>
       </div>
 
+
       {/* ================= DESKTOP ================= */}
       <NavbarHome />
 
@@ -62,11 +68,16 @@ export default function Home() {
         F:t
       </Link>
 
+
       <div className="hidden md:flex absolute top-10 right-12 items-center gap-6 text-white text-[13px] tracking-[0.3em] z-[300]">
 
         <CurrencyDropdown />
 
-        <button className="flex items-center gap-2 hover:opacity-70">
+        {/* LOGIN */}
+        <button
+          onClick={() => setOpenLogin(true)}
+          className="flex items-center gap-2 hover:opacity-70"
+        >
           LOGIN <User size={14} />
         </button>
 
@@ -81,10 +92,12 @@ export default function Home() {
 
       </div>
 
+
       {/* HERO */}
       <div className="pt-[120px] md:pt-0">
         <HeroSection />
       </div>
+
 
       <div className="space-y-24">
         <ProductsSlider />
@@ -96,6 +109,10 @@ export default function Home() {
         <HeroKnitwear />
         <InstagramStory />
       </div>
+
+
+      {/* LOGIN MODAL */}
+      <LoginModal open={openLogin} setOpen={setOpenLogin} />
 
     </main>
   );

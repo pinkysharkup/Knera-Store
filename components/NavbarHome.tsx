@@ -1,8 +1,10 @@
+
 "use client";
 
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
+import LoginModal from "./LoginModal";
 
 export default function NavbarHome() {
   const [homeOpen, setHomeOpen] = useState(false);
@@ -10,11 +12,24 @@ export default function NavbarHome() {
   const [shopOpen, setShopOpen] = useState(false);
   const [blogOpen, setBlogOpen] = useState(false);
 
+  // Login Modal
+  const [openLogin, setOpenLogin] = useState(false);
+
   return (
+    <>
     
     <div className="hidden md:flex absolute left-12 top-24 z-[100] text-white">
 
       <div className="flex flex-col gap-6 text-[13px] tracking-[0.35em]">
+
+        {/* LOGIN */}
+        <button
+          onClick={() => setOpenLogin(true)}
+          className="text-left"
+        >
+          LOGIN
+        </button>
+
 
         {/* HOME */}
         <div>
@@ -33,6 +48,7 @@ export default function NavbarHome() {
             </div>
           )}
         </div>
+
 
         {/* PAGES */}
         <div>
@@ -53,6 +69,7 @@ export default function NavbarHome() {
           )}
         </div>
 
+
         {/* SHOP */}
         <div>
           <button
@@ -69,6 +86,7 @@ export default function NavbarHome() {
             </div>
           )}
         </div>
+
 
         {/* BLOG */}
         <div>
@@ -91,5 +109,11 @@ export default function NavbarHome() {
 
       </div>
     </div>
+
+
+    {/* LOGIN MODAL */}
+    <LoginModal open={openLogin} setOpen={setOpenLogin} />
+
+    </>
   );
 }

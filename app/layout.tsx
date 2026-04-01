@@ -1,8 +1,8 @@
 
-
 import "./globals.css";
 import Footer from "../components/Footer";
 import { CartProvider } from "../context/CartContext";
+
 import { Inter, Playfair_Display } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,7 +30,6 @@ export default function RootLayout({
         className={`${inter.className} ${playfair.variable} bg-[#f5f3ef] overflow-x-hidden antialiased`}
       >
         <CartProvider>
-      
 
           <main>{children}</main>
 
