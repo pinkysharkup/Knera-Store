@@ -1,3 +1,21 @@
+// import Navbar from "../../../components/Navbar";
+// import MobileNavbar from "../../../components/MobileNavbar";
+// import TopBar from "../../../components/TopBar";
+// import ShopHero from "../../../components/ShopHero";
+// import ShopLayout from "../../../components/ShopLayout";
+
+// export default function ShopPage() {
+//   return (
+//     <div>
+//       <TopBar />
+//       <Navbar />
+//       <MobileNavbar />
+
+//       <ShopHero />
+//       <ShopLayout page={2} />
+//     </div>
+//   );
+// }
 import Navbar from "../../../components/Navbar";
 import MobileNavbar from "../../../components/MobileNavbar";
 import TopBar from "../../../components/TopBar";
@@ -8,11 +26,19 @@ export default function ShopPage() {
   return (
     <div>
       <TopBar />
-      <Navbar />
-      <MobileNavbar />
+
+      {/* Desktop Navbar */}
+      <div className="hidden lg:block">
+        <Navbar />
+      </div>
+
+      {/* Mobile Navbar */}
+      <div className="block lg:hidden">
+        <MobileNavbar />
+      </div>
 
       <ShopHero />
-      <ShopLayout page={2} />
+      <ShopLayout page={1} />
     </div>
   );
 }

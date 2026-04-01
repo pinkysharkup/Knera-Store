@@ -257,6 +257,91 @@ price="130$"
 </>
 )}
 
+{page === 4 && (
+<>
+
+{/* Row 1 */}
+<div className="grid grid-cols-2 gap-8">
+
+<ProductCard
+image="/images/bail bar.jpg"
+title="Bail Soap Bar"
+category="Handmade / Soap"
+price="35$"
+/>
+
+<ProductCard
+image="/images/bread1.jpg"
+title="Natural Bread "
+category="Handmade / craft bread"
+price="32$"
+/>
+
+</div>
+
+
+{/* Row 2 */}
+<div className="grid grid-cols-2 gap-8 mt-14">
+
+<ProductCard
+image="/images/bread2.jpg"
+title="Organic Bread "
+category="Handmade / craft bread"
+price="38$"
+/>
+
+<ProductCard
+image="/images/bread3.jpg"
+title="coffee Bread "
+category="Handmade / craft bread"
+price="34$"
+/>
+
+</div>
+
+
+{/* Row 3 */}
+<div className="grid grid-cols-2 gap-8 mt-14">
+
+<ProductCard
+image="/images/butterball.jpg"
+title="Butter Ball Soap"
+category="Handmade / Bath"
+price="29$"
+/>
+
+<ProductCard
+image="/images/oscan salt.jpg"
+title="Ocean Salt Soap"
+category="Handmade / Bath"
+price="41$"
+/>
+
+</div>
+
+
+{/* Row 4 */}
+<div className="grid grid-cols-2 gap-8 mt-14">
+
+<ProductCard
+image="/images/pilling bar.jpg"
+title="Peeling Soap Bar"
+category="Handmade / Soap"
+price="36$"
+/>
+
+<ProductCard
+image="/images/sage bar.jpg"
+title="Sage Herbal Soap"
+category="Handmade / Soap"
+price="39$"
+/>
+
+</div>
+
+</>
+)}
+
 {/* Pagination */}
 <div className="flex justify-center items-center gap-6 mt-20 text-[14px]">
 

@@ -8,7 +8,8 @@ export default function Navbar() {
   const { totalItems } = useCart();
 
   return (
-    <div className="w-full">
+    // <div className="w-full">
+    <div className="hidden md:block w-full">
 
       {/* TOP BAR */}
       <div className="w-full bg-[#cbb8ae] text-center text-[12px] tracking-[0.2em] py-2 text-white">
