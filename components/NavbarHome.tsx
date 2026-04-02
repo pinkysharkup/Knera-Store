@@ -82,7 +82,7 @@ export default function NavbarHome() {
           {shopOpen && (
             <div className="flex flex-col gap-3 mt-3 ml-3 text-[12px] tracking-[0.25em] text-white/80">
               <Link href="/shop">Shop List</Link>
-              <Link href="/product">Product Single</Link>
+              <Link href="/shop/product-single">Product Single</Link>
             </div>
           )}
         </div>

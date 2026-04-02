@@ -29,8 +29,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden pt-[90px]">
 
+    <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background Images */}
       {images.map((src, i) => (
         <Image

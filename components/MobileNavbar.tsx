@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -16,10 +17,10 @@ export default function MobileNavbar() {
     <>
       {/* HEADER */}
       
-      <div className="md:hidden relative w-full z-[500]">
+      <div className="md:hidden relative w-full z-[500] overflow-hidden">
 
         {/* Top Bar */}
-        <div className="bg-[#cbb8ae] text-white text-center text-[12px] py-2 tracking-[0.2em]">
+        <div className="bg-[#cbb8ae] text-white text-center text-[11px] py-2 px-3 leading-tight">
           Products Made With Love.{" "}
           <span className="underline">Check our store.</span>
         </div>
@@ -28,7 +29,7 @@ export default function MobileNavbar() {
         <div className="flex items-center justify-between px-4 py-4 bg-[#f5f3ef]">
 
           {/* CART */}
-          <div className="flex items-center gap-2 text-sm tracking-[0.2em]">
+          <div className="flex items-center gap-2 text-sm">
             CART
             {totalItems > 0 && (
               <span className="bg-black text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
@@ -55,7 +56,9 @@ export default function MobileNavbar() {
 
         </div>
       </div>
-      <div className="h-[110px] md:hidden"></div>
+
+      <div className="h-[95px] md:hidden"></div>
+
       {/* MENU */}
       {mobileOpen && (
         <>
@@ -64,7 +67,7 @@ export default function MobileNavbar() {
             onClick={() => setMobileOpen(false)}
           />
 
-          <div className="fixed top-0 left-0 w-full bg-white z-[999]">
+          <div className="fixed top-0 left-0 w-full bg-white z-[999] overflow-y-auto h-full">
 
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-4 border-b">
@@ -83,7 +86,7 @@ export default function MobileNavbar() {
             </div>
 
             {/* Menu */}
-            <div className="p-6 space-y-6 text-[14px] tracking-[0.3em]">
+            <div className="p-6 space-y-6 text-[14px] tracking-[0.2em]">
 
               <Link href="/">HOME</Link>
 
@@ -116,6 +119,7 @@ export default function MobileNavbar() {
                 {shopOpen && (
                   <div className="mt-3 ml-4 space-y-2 text-black/70">
                     <Link href="/shop">Shop List</Link>
+                    <Link href="/shop/product-single">Product Single</Link>
                   </div>
                 )}
               </div>
