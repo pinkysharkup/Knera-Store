@@ -98,5 +98,6 @@ export default function HeroFashion() {
       </div>
 
     </section>
+
   );
 }

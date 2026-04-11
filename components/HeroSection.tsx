@@ -46,15 +46,14 @@ export default function HeroSection() {
         />
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-[#3b2f2a]/40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#3b2f2a]/30 via-transparent to-[#3b2f2a]/40" />
+      {/* Overlay (خففناه شوية عشان اللوجو يبان) */}
+      <div className="absolute inset-0 bg-[#3b2f2a]/25" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#3b2f2a]/10 via-transparent to-[#3b2f2a]/30" />
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center text-center h-full px-6">
+      <div className="relative z-10 flex items-end justify-center text-center h-full px-6 pb-24 md:pb-32">
 
-        <div className="max-w-4xl mx-auto">
-
+          <div className="max-w-4xl mx-auto mt-24 md:mt-32">
           <h1
             className={`${playfair.className}
             text-4xl

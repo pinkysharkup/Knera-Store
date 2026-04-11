@@ -22,15 +22,6 @@ export default function NavbarHome() {
 
       <div className="flex flex-col gap-6 text-[13px] tracking-[0.35em]">
 
-        {/* LOGIN */}
-        <button
-          onClick={() => setOpenLogin(true)}
-          className="text-left"
-        >
-          LOGIN
-        </button>
-
-
         {/* HOME */}
         <div>
           <button
