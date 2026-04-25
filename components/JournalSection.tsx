@@ -172,7 +172,7 @@ export default function JournalSection() {
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
 
-              <Link href="/blog" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
+              <Link href="/journal/1" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
                 Read More
               </Link>
             </div>
@@ -211,7 +211,7 @@ export default function JournalSection() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <Link href="/blog" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
+                <Link href="/journal/2" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
                   Read More
                 </Link>
               </div>
@@ -244,7 +244,7 @@ export default function JournalSection() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <Link href="/blog" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
+                <Link href="/journal/3" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
                   Read More
                 </Link>
               </div>
