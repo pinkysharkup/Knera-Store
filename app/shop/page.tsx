@@ -22,7 +22,7 @@ export default function ShopPage() {
   }, [search, sort]);
 
   return (
-    <section className="space-y-24">
+    <section className="space-y-24 pt-[120px] md:pt-[140px]">
 
       {/* Header */}
       <div className="text-center space-y-6">
@@ -65,13 +65,13 @@ export default function ShopPage() {
             className="group block"
           >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
-             
+
               <Image
                 src={item.image}
                 alt={`Handmade crochet product: ${item.name}`}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+              />
 
             </div>
 
