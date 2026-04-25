@@ -1,18 +1,23 @@
 
+
 "use client";
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const products = [
-  { id: 1, name: "Cotton Cloth", image: "/images/bag-1.jpg", price: 35 },
-  { id: 2, name: "Knit Sweater", image: "/images/bag-2.jpg", price: 170 },
-  { id: 3, name: "Knitted Scarf", image: "/images/bag-4.jpg", price: 89 },
-  { id: 4, name: "Crochet Bag", image: "/images/bag-5.jpg", price: 120 },
+  { id: 1, name: "White Crochet Bag", image: "/images/bag-1.jpg", price: 35 },
+  {
+    id: 2,
+    name: "Macramé Table Runner",
+    image: "/images/bag-4.jpg",
+    price: 95,
+  },
+  { id: 3, name: "Sun Flower Bag", image: "/images/bag-7.jpg", price: 89 },
+  { id: 4, name: "Green Crochet Bag", image: "/images/bag-6.jpg", price: 120 },
 ];
 
 export default function ProductsSlider() {
-
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,7 +25,14 @@ export default function ProductsSlider() {
     if (!el) return;
 
     const interval = setInterval(() => {
-      el.scrollBy({ left: 420, behavior: "smooth" });
+      if (!el) return;
+
+      // لو وصل للآخر يرجع للبداية
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: 420, behavior: "smooth" });
+      }
     }, 3500);
 
     return () => clearInterval(interval);
@@ -28,19 +40,20 @@ export default function ProductsSlider() {
 
   const scroll = (dir: "left" | "right") => {
     if (!ref.current) return;
+
+    const width = ref.current.clientWidth;
+
     ref.current.scrollBy({
-      left: dir === "left" ? -420 : 420,
+      left: dir === "left" ? -width * 0.8 : width * 0.8,
       behavior: "smooth",
     });
   };
 
   return (
-    // <section className="relative bg-[#f5f3ef] overflow-hidden">
     <section className="relative bg-[#f5f3ef] overflow-hidden pt-16 md:pt-24">
 
       {/* HEADER */}
       <div className="px-6 md:px-20 mb-10 md:mb-16 flex justify-between items-start md:items-center">
-
         <div>
           <h2 className="text-3xl md:text-[48px] font-semibold">
             Explore New Arrivals
@@ -66,7 +79,6 @@ export default function ProductsSlider() {
             →
           </button>
         </div>
-
       </div>
 
       {/* SLIDER */}
@@ -77,10 +89,13 @@ export default function ProductsSlider() {
           className="
             flex gap-4 md:gap-[30px]
             overflow-x-auto
+            custom-scrollbar
             scroll-smooth
+            snap-x snap-mandatory
             pl-6 md:pl-[80px]
             pr-6 md:pr-[80px]
           "
+          style={{ scrollPaddingLeft: "80px" }}
         >
 
           {products.map((p) => (
@@ -90,14 +105,15 @@ export default function ProductsSlider() {
                 min-w-[45%]
                 md:min-w-[420px]
                 lg:min-w-[520px]
+                snap-start
               "
             >
-
               <div className="relative w-full h-[260px] md:h-[520px] lg:h-[620px]">
                 <Image
                   src={p.image}
                   alt={p.name}
                   fill
+                  sizes="(max-width:768px) 100vw, 420px"
                   className="object-cover"
                 />
               </div>
@@ -115,14 +131,11 @@ export default function ProductsSlider() {
                   ${p.price}
                 </div>
               </div>
-
             </div>
           ))}
 
         </div>
-
       </div>
-
     </section>
   );
 }

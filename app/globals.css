@@ -41,6 +41,7 @@ section {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -76,10 +77,12 @@ img {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -90,10 +93,12 @@ img {
 .animate-fadeUp {
   animation: fadeUp 1.2s ease forwards;
 }
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -102,6 +107,7 @@ img {
 .animate-scroll {
   animation: scroll 40s linear infinite;
 }
+
 /* ===== Mobile fixes ===== */
 
 @media (max-width: 640px) {
@@ -114,6 +120,37 @@ img {
     padding-right: 1rem;
   }
 }
+
 body:has(.about-page) .vertical-menu {
   display: none;
+}
+
+/* ================= Scrollbar ================= */
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #e7e5e4;
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.custom-scrollbar:hover {
+  scrollbar-color: #e7e5e4 transparent;
 }

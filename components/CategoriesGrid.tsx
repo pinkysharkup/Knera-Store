@@ -6,7 +6,7 @@ import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400","600","700"]
+  weight: ["400", "600", "700"]
 });
 
 export default function CategoriesGrid() {
@@ -52,7 +52,7 @@ export default function CategoriesGrid() {
             <Overlay
               big
               title="Best Source of Handmade Sweaters"
-              tags={["Water Repellent","Outwear"]}
+              tags={["Water Repellent", "Outwear"]}
             />
 
           </div>
@@ -60,10 +60,10 @@ export default function CategoriesGrid() {
           {/* Small cards */}
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-            <Card img="/images/shop-img-7.jpg" title="Accessories" tags={["Cotton","Handmade"]}/>
-            <Card img="/images/shop-img-8.jpg" title="Hats & Scarfs" tags={["Repellent","Alpaca"]}/>
-            <Card img="/images/shop-img-9.jpg" title="Knitted" tags={["Repellent","Alpaca"]}/>
-            <Card img="/images/shop-img-10.jpg" title="Blankets" tags={["Repellent","Padded"]}/>
+            <Card img="/images/shop-img-7.jpg" title="Accessories" tags={["Cotton", "Handmade"]} />
+            <Card img="/images/shop-img-8.jpg" title="Hats & Scarfs" tags={["Repellent", "Alpaca"]} />
+            <Card img="/images/shop-img-9.jpg" title="Knitted" tags={["Repellent", "Alpaca"]} />
+            <Card img="/images/shop-img-10.jpg" title="Blankets" tags={["Repellent", "Padded"]} />
 
           </div>
 
@@ -88,7 +88,7 @@ function Card({ img, title, tags }: any) {
         />
       </div>
 
-      <Overlay title={title} tags={tags}/>
+      <Overlay title={title} tags={tags} />
 
     </div>
   );
@@ -114,7 +114,7 @@ function Overlay({ title, tags, big }: any) {
       </h3>
 
       <div className="flex gap-4 text-sm mt-2 opacity-90 flex-wrap">
-        {tags.map((t:string,i:number)=>(<span key={i}>{t}</span>))}
+        {tags.map((t: string, i: number) => (<span key={i}>{t}</span>))}
       </div>
 
     </div>
