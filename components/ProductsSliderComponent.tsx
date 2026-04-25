@@ -4,6 +4,7 @@
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const products = [
   { id: 1, name: "White Crochet Bag", image: "/images/bag-1.jpg", price: 35 },
@@ -59,9 +60,9 @@ export default function ProductsSlider() {
             Explore New Arrivals
           </h2>
 
-          <p className="mt-2 md:mt-3 underline cursor-pointer">
+          <Link href="/shop" className="mt-2 md:mt-3 underline cursor-pointer inline-block">
             Shop now
-          </p>
+          </Link>
         </div>
 
         <div className="flex gap-3">
@@ -108,7 +109,7 @@ export default function ProductsSlider() {
                 snap-start
               "
             >
-              <div className="relative w-full h-[260px] md:h-[520px] lg:h-[620px]">
+              <Link href={`/product/${p.id}`} className="block relative w-full h-[260px] md:h-[520px] lg:h-[620px]">
                 <Image
                   src={p.image}
                   alt={p.name}
@@ -116,7 +117,7 @@ export default function ProductsSlider() {
                   sizes="(max-width:768px) 100vw, 420px"
                   className="object-cover"
                 />
-              </div>
+              </Link>
 
               <div className="mt-4 md:mt-6">
                 <h3 className="text-sm md:text-lg font-medium">

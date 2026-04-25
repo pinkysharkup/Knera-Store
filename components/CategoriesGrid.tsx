@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -38,7 +39,7 @@ export default function CategoriesGrid() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
           {/* Big card */}
-          <div className="lg:col-span-1 relative rounded-xl overflow-hidden">
+          <Link href="/shop" className="block lg:col-span-1 relative rounded-xl overflow-hidden group cursor-pointer">
 
             <div className="relative w-full h-[420px] md:h-[520px]">
               <Image
@@ -55,7 +56,7 @@ export default function CategoriesGrid() {
               tags={["Water Repellent", "Outwear"]}
             />
 
-          </div>
+          </Link>
 
           {/* Small cards */}
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -77,7 +78,7 @@ export default function CategoriesGrid() {
 
 function Card({ img, title, tags }: any) {
   return (
-    <div className="relative rounded-xl overflow-hidden">
+    <Link href="/shop" className="block relative rounded-xl overflow-hidden group cursor-pointer">
 
       <div className="relative w-full h-[260px] md:h-[320px]">
         <Image
@@ -90,7 +91,7 @@ function Card({ img, title, tags }: any) {
 
       <Overlay title={title} tags={tags} />
 
-    </div>
+    </Link>
   );
 }
 

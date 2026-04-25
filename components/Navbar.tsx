@@ -79,15 +79,12 @@ CART
 
 <div>
 
-<button
-onClick={() => setHomeOpen(!homeOpen)}
-className="flex items-center gap-2 hover:opacity-70"
->
-
-HOME
-{homeOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="flex items-center gap-2 hover:opacity-70">
+            <Link href="/">HOME</Link>
+            <button onClick={() => setHomeOpen(!homeOpen)}>
+              {homeOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {homeOpen && (
 
@@ -111,15 +108,12 @@ HOME
 
 <div>
 
-<button
-onClick={() => setPagesOpen(!pagesOpen)}
-className="flex items-center gap-2 hover:opacity-70"
->
-
-PAGES
-{pagesOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="flex items-center gap-2 hover:opacity-70">
+            <Link href="/about">ABOUT</Link>
+            <button onClick={() => setPagesOpen(!pagesOpen)}>
+              {pagesOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {pagesOpen && (
 
@@ -141,15 +135,12 @@ PAGES
 
 <div>
 
-<button
-onClick={() => setShopOpen(!shopOpen)}
-className="flex items-center gap-2 hover:opacity-70"
->
-
-SHOP
-{shopOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="flex items-center gap-2 hover:opacity-70">
+            <Link href="/shop">SHOP</Link>
+            <button onClick={() => setShopOpen(!shopOpen)}>
+              {shopOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {shopOpen && (
 
@@ -169,15 +160,12 @@ SHOP
 
 <div>
 
-<button
-onClick={() => setBlogOpen(!blogOpen)}
-className="flex items-center gap-2 hover:opacity-70"
->
-
-BLOG
-{blogOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="flex items-center gap-2 hover:opacity-70">
+            <Link href="/blog">BLOG</Link>
+            <button onClick={() => setBlogOpen(!blogOpen)}>
+              {blogOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {blogOpen && (
 
@@ -261,15 +249,12 @@ onClick={() => setMobileOpen(false)}
 
 <div>
 
-<button
-onClick={() => setHomeOpen(!homeOpen)}
-className="w-full flex items-center justify-between"
->
-
-HOME
-{homeOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="w-full flex items-center justify-between">
+            <Link href="/" className="hover:opacity-70">HOME</Link>
+            <button onClick={() => setHomeOpen(!homeOpen)}>
+              {homeOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {homeOpen && (
 
@@ -291,15 +276,12 @@ HOME
 
 <div>
 
-<button
-onClick={() => setPagesOpen(!pagesOpen)}
-className="w-full flex items-center justify-between"
->
-
-PAGES
-{pagesOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="w-full flex items-center justify-between">
+            <Link href="/about" className="hover:opacity-70">ABOUT</Link>
+            <button onClick={() => setPagesOpen(!pagesOpen)}>
+              {pagesOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {pagesOpen && (
 
@@ -319,15 +301,12 @@ PAGES
 
 <div>
 
-<button
-onClick={() => setShopOpen(!shopOpen)}
-className="w-full flex items-center justify-between"
->
-
-SHOP
-{shopOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="w-full flex items-center justify-between">
+            <Link href="/shop" className="hover:opacity-70">SHOP</Link>
+            <button onClick={() => setShopOpen(!shopOpen)}>
+              {shopOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {shopOpen && (
 
@@ -347,15 +326,12 @@ SHOP
 
 <div>
 
-<button
-onClick={() => setBlogOpen(!blogOpen)}
-className="w-full flex items-center justify-between"
->
-
-BLOG
-{blogOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
-
-</button>
+          <div className="w-full flex items-center justify-between">
+            <Link href="/blog" className="hover:opacity-70">BLOG</Link>
+            <button onClick={() => setBlogOpen(!blogOpen)}>
+              {blogOpen ? <ChevronDown size={16}/> : <ChevronRight size={16}/>}
+            </button>
+          </div>
 
 {blogOpen && (
 

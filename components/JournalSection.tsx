@@ -129,6 +129,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function JournalSection() {
   return (
@@ -171,9 +172,9 @@ export default function JournalSection() {
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
 
-              <button className="border-b border-black pb-[3px]">
+              <Link href="/blog" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
                 Read More
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -210,9 +211,9 @@ export default function JournalSection() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <button className="border-b border-black pb-[3px]">
+                <Link href="/blog" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
                   Read More
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -243,9 +244,9 @@ export default function JournalSection() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <button className="border-b border-black pb-[3px]">
+                <Link href="/blog" className="border-b border-black pb-[3px] inline-block hover:opacity-70 transition">
                   Read More
-                </button>
+                </Link>
               </div>
             </div>
 

@@ -26,14 +26,14 @@ export default function ProductCard({
     <div className="group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
 
       {/* الصورة الطويلة زي الموقع */}
-      <div className="relative w-full h-[520px] overflow-hidden">
+      <Link href={`/product/${id}`} className="block relative w-full h-[520px] overflow-hidden">
         <Image
           src={image}
           alt={name}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700"
         />
-      </div>
+      </Link>
 
       {/* المحتوى */}
       <div className="p-7 space-y-4">

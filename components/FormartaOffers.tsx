@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FormartaOffers() {
   return (
@@ -78,9 +79,9 @@ export default function FormartaOffers() {
 
 
           {/* BUTTON */}
-          <button className="bg-[#e9e6e2] px-8 py-3 text-[13px] tracking-wide hover:bg-[#dcd8d3] transition">
+          <Link href="/shop" className="inline-block bg-[#e9e6e2] px-8 py-3 text-[13px] tracking-wide hover:bg-[#dcd8d3] transition">
             Shop Now
-          </button>
+          </Link>
 
         </div>
 

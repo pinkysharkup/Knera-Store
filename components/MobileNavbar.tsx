@@ -92,11 +92,14 @@ export default function MobileNavbar() {
 
               {/* PAGES */}
               <div>
-                <div
-                  className="flex justify-between cursor-pointer"
-                  onClick={() => setPagesOpen(!pagesOpen)}
-                >
-                  PAGES <span>{pagesOpen ? "⌄" : "›"}</span>
+                <div className="flex justify-between items-center">
+                  <Link href="/about" className="flex-1 py-1">ABOUT</Link>
+                  <div
+                    className="cursor-pointer px-4 py-1"
+                    onClick={() => setPagesOpen(!pagesOpen)}
+                  >
+                    <span>{pagesOpen ? "⌄" : "›"}</span>
+                  </div>
                 </div>
 
                 {pagesOpen && (
@@ -109,11 +112,14 @@ export default function MobileNavbar() {
 
               {/* SHOP */}
               <div>
-                <div
-                  className="flex justify-between cursor-pointer"
-                  onClick={() => setShopOpen(!shopOpen)}
-                >
-                  SHOP <span>{shopOpen ? "⌄" : "›"}</span>
+                <div className="flex justify-between items-center">
+                  <Link href="/shop" className="flex-1 py-1">SHOP</Link>
+                  <div
+                    className="cursor-pointer px-4 py-1"
+                    onClick={() => setShopOpen(!shopOpen)}
+                  >
+                    <span>{shopOpen ? "⌄" : "›"}</span>
+                  </div>
                 </div>
 
                 {shopOpen && (
@@ -126,11 +132,14 @@ export default function MobileNavbar() {
 
               {/* BLOG */}
               <div>
-                <div
-                  className="flex justify-between cursor-pointer"
-                  onClick={() => setBlogOpen(!blogOpen)}
-                >
-                  BLOG <span>{blogOpen ? "⌄" : "›"}</span>
+                <div className="flex justify-between items-center">
+                  <Link href="/blog" className="flex-1 py-1">BLOG</Link>
+                  <div
+                    className="cursor-pointer px-4 py-1"
+                    onClick={() => setBlogOpen(!blogOpen)}
+                  >
+                    <span>{blogOpen ? "⌄" : "›"}</span>
+                  </div>
                 </div>
 
                 {blogOpen && (

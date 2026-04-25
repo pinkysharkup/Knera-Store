@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -43,10 +44,10 @@ export default function Footer() {
             </h4>
 
             <ul className="space-y-4 md:space-y-5 text-[15px] md:text-[16px] text-[#6c6c6c]">
-              <li className="hover:text-black transition">Home</li>
-              <li className="hover:text-black transition">About</li>
-              <li className="hover:text-black transition">Shop</li>
-              <li className="hover:text-black transition">Blog</li>
+              <li><Link href="/" className="hover:text-black transition">Home</Link></li>
+              <li><Link href="/about" className="hover:text-black transition">About</Link></li>
+              <li><Link href="/shop" className="hover:text-black transition">Shop</Link></li>
+              <li><Link href="/blog" className="hover:text-black transition">Blog</Link></li>
             </ul>
 
           </div>
@@ -59,10 +60,10 @@ export default function Footer() {
             </h4>
 
             <ul className="space-y-4 md:space-y-5 text-[15px] md:text-[16px] text-[#6c6c6c]">
-              <li className="hover:text-black transition">Contact</li>
-              <li className="hover:text-black transition">My Account</li>
-              <li className="hover:text-black transition">Privacy Policy</li>
-              <li className="hover:text-black transition">Refund Policy</li>
+              <li><Link href="/contact" className="hover:text-black transition">Contact</Link></li>
+              <li><Link href="/account" className="hover:text-black transition">My Account</Link></li>
+              <li><Link href="/privacy" className="hover:text-black transition">Privacy Policy</Link></li>
+              <li><Link href="/refund" className="hover:text-black transition">Refund Policy</Link></li>
             </ul>
 
           </div>
